@@ -1,0 +1,66 @@
+﻿@model List<Day4_assignment.Entities.Customer>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thea@*d>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th></th>
+        </tr>
+    </thead>*@
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.cid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.cid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.cid">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
